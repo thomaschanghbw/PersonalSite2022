@@ -1,17 +1,16 @@
-// import frontmatter from "remark-frontmatter";
-// const remarkFrontmatter = require("remark-frontmatter");
-// import nextMdx from "@next/mdx"
-// import { remarkMdxFrontmatter } from 'remark-mdx-frontmatter';
+import frontmatter from "remark-frontmatter";
+import remarkFrontmatter from 'remark-frontmatter'
+import nextMdx from "@next/mdx"
+import { remarkMdxFrontmatter } from 'remark-mdx-frontmatter';
 
 /** @type {import('next').NextConfig} */
-const withMDX = require("@next/mdx")({
+const withMDX = nextMdx({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
   },
 });
-module.exports = withMDX({
+export default withMDX({
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 });
 

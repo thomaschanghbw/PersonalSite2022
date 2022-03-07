@@ -1,0 +1,34 @@
+import BlogPostLayout from "components/layout/blogPost/BlogPostLayout";
+import ThousandWordsTextArea
+    from "components/thousandwords/ThousandWordsTextArea";
+
+export const meta = {
+    author: 'Thomas Chang',
+    title: "Explain a topic with only common words",
+    date: new Date('Feb 27, 2022 '),
+    abstract: "Given only the most common words in English, how well can you explain a topic?"
+}
+
+# Explain a topic with only common words
+## Here's 1000 words. Explain a topic.
+
+There's an old adage that claims that if you understand a topic well enough, then you can teach it in layman's terms.
+
+> If you can't explain it simply, you don't understand it well enough.
+> > Albert Einstein
+
+It's a powerful, and rare, ability to be ability to take the seemingly complex, and transform it into something
+elegantly simple. Some popular efforts to do this include [WIRED's 5 Levels](https://www.youtube.com/watch?v=fOGdb1CTu5c)
+series and Randall Munroe's [Thing Explainer book](https://www.goodreads.com/book/show/25329850-thing-explainer). In WIRED's series,
+a topic expert explains a concept in 5 different levels: child, teen, college, graduate, and expert. In Thing Explainer, Munroe
+explains a large list of topics using only the 1000 most common words in the English language (which itself was inspired
+by a popular [XKCD commic](https://xkcd.com/1133/)).
+
+While the latter's method isn't a fool-proof way to ensure a topic is explained "simply," it's at least a measurable
+estimate. And... it's harder than you might think! I whipped up a quick text editor to play around with this concept. Pick
+a topic and take a try explaining something:
+
+
+<ThousandWordsTextArea />
+
+export default ({ children }) => <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
