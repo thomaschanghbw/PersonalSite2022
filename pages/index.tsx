@@ -58,7 +58,7 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
       </h1>
       <h2 className={"text-pink-400 text-2xl mt-10"}>Posts</h2>
       <div
-        className={"grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6"}
+        className={"grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6"}
       >
         {props.postData.map((post) => {
           return (
