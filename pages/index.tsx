@@ -15,23 +15,38 @@ const postsDirectory = path.join(process.cwd(), "pages/posts/");
 const fileNames = fs.readdirSync(postsDirectory);
 
 export async function getStaticProps(ctx: any) {
-  const allPostsData = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.mdx$/, "");
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
+  const allPostsData = fileNames.reduce(
+    (
+      curPostData: Array<{
+        id: string;
+        title: string;
+        date: string;
+        abstract: string;
+      }>,
+      fileName
+    ) => {
+      const id = fileName.replace(/\.mdx$/, "");
+      // Read markdown file as string
+      const fullPath = path.join(postsDirectory, fileName);
 
-    // const content = fs.readFileSync(fullPath);
+      // const content = fs.readFileSync(fullPath);
 
-    const meta = require(`./posts/${fileName}`).meta;
-    console.log("TGOMASS");
-    console.log("THOMAS", { id, res: require(`./posts/${fileName}`).meta });
-    return {
-      id,
-      title: meta.title,
-      date: meta.date.toDateString(),
-      abstract: meta.abstract,
-    };
-  });
+      const meta = require(`./posts/${fileName}`).meta;
+      console.log("TGOMASS");
+      console.log("THOMAS", { id, res: require(`./posts/${fileName}`).meta });
+      if (!meta.draft) {
+        curPostData.push({
+          id,
+          title: meta.title,
+          date: meta.date.toDateString(),
+          abstract: meta.abstract,
+        });
+      }
+
+      return curPostData;
+    },
+    []
+  );
 
   return {
     props: {
@@ -49,28 +64,23 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
   console.log("TOM", props);
   return (
     <BaseLayout className="md:px-[20%] px-4 pt-12">
-      <h1
-        className={
-          "text-8xl text-neutral-300 font-heading font-bold tracking-wide"
-        }
-      >
+      <h1 className={"text-6xl text-black font-heading flex justify-center"}>
         Thomas Chang
       </h1>
-      <h2 className={"text-pink-400 text-2xl mt-10"}>Posts</h2>
       <div
-        className={"grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6"}
+        className={"grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-8"}
       >
         {props.postData.map((post) => {
           return (
             <Link key={post.id} href={`${POSTS_PATH}${post.id}`}>
               <a
                 className={
-                  "rounded-md bg-neutral-700 rounded-md px-6 py-4 flex flex-col"
+                  " px-6 py-4 flex flex-col hover:bg-[#D1C8B9] rounded-md"
                 }
               >
                 <div
                   className={
-                    "text-neutral-400 font-heading font-medium text-sm tracking-tight"
+                    "text-black font-heading font-medium text-sm tracking-tight"
                   }
                 >
                   {post.date}
@@ -78,23 +88,17 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
 
                 <div
                   className={
-                    "text-neutral-200 font-semibold font-heading text-2xl tracking-wide mt-1"
+                    "text-black font-extrabold font-heading text-3xl leading-tight tracking-wide mt-1"
                   }
                 >
                   {post.title}
                 </div>
 
-                <div
-                  className={"text-neutral-400 font-body tracking-wide mb-2"}
-                >
+                <div className={"text-black font-body tracking-wide mt-3 mb-2"}>
                   {post.abstract}
                 </div>
 
-                <div
-                  className={
-                    "text-pink-500 font-medium tracking-wide font-body mt-auto"
-                  }
-                >
+                <div className={"text-pink-500 font-medium  font-body mt-auto"}>
                   Read more
                 </div>
               </a>

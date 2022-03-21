@@ -1,0 +1,36 @@
+import BlogPostLayout from "components/layout/blogPost/BlogPostLayout";
+
+export const meta = {
+    author: 'Thomas Chang',
+    title: "Do you have a mask?",
+    date: new Date('March 20, 2022 '),
+    abstract: "In this article I am going to bananas bananas bananas bananas bananas bananas bananas",
+    draft: false
+}
+
+# Do you have a mask?
+When I need to be productive, I go to Starbucks. The minor social pressures of being in a public setting keep me
+focused in ways I can't be at home.
+
+I've spent so much time at Starbucks that I could write novels about the crazy interactions I've observed among strangers and staff
+from the view of my little corner Starbucks table.
+
+One trend I noticed during the Covid pandemic is that employees would always ask customers without a face mask,
+"Do you have a mask?" before offering one. It didn't matter which location or which employee. The question was always,
+"Do you have a mask?", not "Can you please wear a mask?" or "You need a mask to enter here." like I heard in so many other
+stores.
+
+I do not work at Starbucks, so I can't say for sure whether these were top-down directions from corporate or just some
+cosmic coincidence, but the phrase is subtly great.
+
+It makes no judgements about the person, decreasing the chance that the person would become defensive. From the perspective
+of an aggressive actor, they have nothing to fight back on because the question isn't demanding anything of them (though
+implicitly it really is). It is just a question of whether they have a mask with them or not.
+
+They are already in the door, and they are being offered the key to get their drink - a little surgical mask. In the moment it seems
+so trivial a tradeoff to either put on a mask or have their journey to get to the store be for nothing.
+
+I noticed (though without any formal data), that much more customers would take the mask over leaving the store than customers in similar interactions at
+other non-Starbucks stores.
+
+export default ({ children }) => <BlogPostLayout meta={meta}>{children}</BlogPostLayout>

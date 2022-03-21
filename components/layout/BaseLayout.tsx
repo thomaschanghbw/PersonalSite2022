@@ -8,7 +8,7 @@ interface BaseLayoutProps {
 const BaseLayout = (props: BaseLayoutProps) => {
   return (
     <div
-      className={`w-full min-h-screen bg-neutral-900 overflow-auto ${
+      className={`w-full min-h-screen bg-bg overflow-auto ${
         props.className ? props.className : ""
       }`}
     >

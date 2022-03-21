@@ -7,7 +7,7 @@ export function H1(props: { [x: string]: any }) {
   return (
     <h1
       className={
-        "text-neutral-200 text-center font-heading text-5xl font-semibold tracking-wide my-8"
+        "text-black text-center font-heading text-5xl font-semibold  mt-8 mb-12"
       }
       {...props}
     />
@@ -15,9 +15,11 @@ export function H1(props: { [x: string]: any }) {
 }
 
 export function P(props: { [x: string]: any }) {
+  console.log("THOMAS THOMAS 2", props);
+
   return (
     <p
-      className={"text-neutral-400 font-body font-semibold mb-4 text-lg"}
+      className={"text-[#181818]  font-body font-semibold mb-4 text-lg"}
       {...props}
     />
   );
@@ -26,7 +28,9 @@ export function P(props: { [x: string]: any }) {
 export function H2(props: { [x: string]: any }) {
   return (
     <h2
-      className={"text-neutral-400 font-heading font-bold mb-4 text-3xl"}
+      className={
+        "text-black font-heading tracking-wide font-bold mb-6 text-3xl"
+      }
       {...props}
     />
   );
@@ -71,18 +75,21 @@ export function Img(props: { [x: string]: any }) {
 }
 
 export function Li(props: { [x: string]: any }) {
-  return <li className={"text-neutral-400 font-body"} {...props} />;
+  return <li className={"text-black font-body"} {...props} />;
 }
 
 export function Blockquote(props: { [x: string]: any }) {
-  console.log("THOMAS THOMAS ", props.children);
+  console.log("THOMAS THOMAS ", props);
   if (props?.children?.props?.parentName) {
     console.log("THOMAS SAYS WHAAAAT");
   }
   return (
     <blockquote
-      className={"text-neutral-400 font-body bg-red-200"}
-      {...props}
-    />
+      className={
+        "text-gray-600 font-body font-semibold mb-4 py-2 text-lg border-l-4 pl-2 border-black"
+      }
+    >
+      {props.children.props.children}
+    </blockquote>
   );
 }

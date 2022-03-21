@@ -4,7 +4,7 @@ import { BiArrowBack } from "react-icons/bi";
 
 const NavBar = () => {
   return (
-    <div className={"w-full py-24 flex text-stone-900"}>
+    <div className={"w-full pt-24 pb-12 flex text-stone-900"}>
       <Link href="/">
         <a className={"flex items-center gap-2"}>
           <BiArrowBack /> Home

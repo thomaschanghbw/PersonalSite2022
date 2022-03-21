@@ -9,6 +9,9 @@ module.exports = {
         heading: ["EB Garamond", "serif"],
         body: ["Nunito", "sans-serif"],
       },
+      colors: {
+        bg: "#F7F2EA",
+      },
     },
   },
   plugins: [],

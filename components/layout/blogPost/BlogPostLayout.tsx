@@ -34,7 +34,7 @@ const components = {
 export default function BlogPostLayout({ children }: { children: ReactNode }) {
   return (
     <MDXProvider components={components}>
-      <BaseLayout className={"md:px-[20%] px-4"}>
+      <BaseLayout className={"md:px-[25%] px-12 px-4"}>
         <NavBar />
         <div className={"mb-12"}>{children}</div>
       </BaseLayout>
