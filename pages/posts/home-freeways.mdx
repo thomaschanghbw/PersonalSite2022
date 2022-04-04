@@ -1,0 +1,22 @@
+import BlogPostLayout from "components/layout/blogPost/BlogPostLayout";
+
+export const meta = {
+    author: 'Thomas Chang',
+    title: "On Homes: Freeway Proximity",
+    date: new Date('April 3, 2022 '),
+    abstract: "Live close to the freeway",
+    draft: false
+}
+
+# On Homes: Freeway Proximity
+When buying a home, stay close to the freeway.[^1] The freeway is your gateway to the world outside your city, and your proximity to the
+freeway will influence how long it takes to access other cities and how often you will want to.
+
+My drive to LA takes 45 minutes. 15 of those minutes are spent going from my home to the freeway, meaning 1/3 of the
+travel is spent stuck within my own city. There are even some homes in this city that take up to 25 minutes to access the freeway.
+You don't want to deal with this for years.
+
+[^1]: As always, there are always exceptions and everyone has different circumstances, so this does not apply to everyone (or even a majority).
+
+
+export default ({ children }) => <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
