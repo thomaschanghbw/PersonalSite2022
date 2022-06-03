@@ -36,7 +36,7 @@ export default function BlogPostLayout({ children }: { children: ReactNode }) {
     <MDXProvider components={components}>
       <BaseLayout className={"md:px-[25%] px-12 px-4"}>
         <NavBar />
-        <div className={"mb-12"}>{children}</div>
+        <div className={"mb-12 max-w-[55rem] mx-auto"}>{children}</div>
       </BaseLayout>
     </MDXProvider>
   );

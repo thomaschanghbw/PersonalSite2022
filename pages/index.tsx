@@ -64,7 +64,7 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
   console.log("TOM", props);
   return (
     <BaseLayout className="md:px-[20%] px-4 pt-12">
-      <h1 className={"text-6xl text-black font-heading flex justify-center"}>
+      <h1 className={"text-6xl font-heading flex justify-center"}>
         Thomas Chang
       </h1>
       <div
@@ -75,26 +75,24 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
             <Link key={post.id} href={`${POSTS_PATH}${post.id}`}>
               <a
                 className={
-                  " px-6 py-4 flex flex-col hover:bg-[#D1C8B9] rounded-md"
+                  " px-6 py-4 flex flex-col hover:bg-stone-300 rounded-md"
                 }
               >
                 <div
-                  className={
-                    "text-black font-heading font-medium text-sm tracking-tight"
-                  }
+                  className={" font-heading font-medium text-sm tracking-tight"}
                 >
                   {post.date}
                 </div>
 
                 <div
                   className={
-                    "text-black font-extrabold font-heading text-3xl leading-tight tracking-wide mt-1"
+                    " font-extrabold font-heading text-3xl leading-tight tracking-wide mt-1"
                   }
                 >
                   {post.title}
                 </div>
 
-                <div className={"text-black font-body tracking-wide mt-3 mb-2"}>
+                <div className={"font-body tracking-wide mt-3 mb-2"}>
                   {post.abstract}
                 </div>
 

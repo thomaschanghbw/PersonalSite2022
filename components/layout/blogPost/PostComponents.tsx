@@ -6,9 +6,7 @@ import { ReactNode } from "react";
 export function H1(props: { [x: string]: any }) {
   return (
     <h1
-      className={
-        "text-black text-center font-heading text-5xl font-semibold  mt-8 mb-12"
-      }
+      className={" text-center font-heading text-5xl font-semibold  mt-8 mb-12"}
       {...props}
     />
   );
@@ -19,7 +17,7 @@ export function P(props: { [x: string]: any }) {
 
   return (
     <p
-      className={"text-[#181818]  font-body font-semibold mb-4 text-lg"}
+      className={"text-stone-900  font-body font-semibold mb-4 text-lg"}
       {...props}
     />
   );
@@ -28,9 +26,7 @@ export function P(props: { [x: string]: any }) {
 export function H2(props: { [x: string]: any }) {
   return (
     <h2
-      className={
-        "text-black font-heading tracking-wide font-bold mb-6 text-3xl"
-      }
+      className={" font-heading tracking-wide font-bold mb-6 text-3xl"}
       {...props}
     />
   );
@@ -75,13 +71,11 @@ export function Img(props: { [x: string]: any }) {
 }
 
 export function Li(props: { [x: string]: any }) {
-  return <li className={"text-black font-body"} {...props} />;
+  return <li className={" font-body"} {...props} />;
 }
 
 export function Blockquote(props: { [x: string]: any }) {
-  console.log("THOMAS THOMAS ", props);
   if (props?.children?.props?.parentName) {
-    console.log("THOMAS SAYS WHAAAAT");
   }
   return (
     <blockquote
