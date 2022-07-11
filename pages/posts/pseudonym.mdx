@@ -1,0 +1,22 @@
+import BlogPostLayout from "components/layout/blogPost/BlogPostLayout";
+
+export const meta = {
+    author: 'Thomas Chang',
+    title: "Why I write under a pseudonym",
+    date: new Date('July 10, 2022 '),
+    abstract: "Or, why you won't see anything here",
+    draft: false
+}
+
+# Why I write under a pseudonym
+Is it to avoid judgement? Fear of criticism? To some extent yes, though I've long since accepted that there's no
+escape from these things, be it in real life or the digital world.
+
+Knowing there's no escape from criticism, writing anonymously simply allows me to write freely without considering
+any reputational effects. It doesn't matter if I write a terribly misinformed piece - someone will call out the flaws (perhaps not so nicely),
+I'll learn from it, and I'll improve. At the worst case I just make a new identity 😁.
+
+That said, if you want to see my real blog, ask me and I'll share it with you personally. Maybe.
+
+
+export default ({ children }) => <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
